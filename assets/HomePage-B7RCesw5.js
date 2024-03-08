@@ -1,1 +1,0 @@
-import{j as i}from"./index-DV5R9x0p.js";function r(){return i.jsx("div",{children:i.jsx("img",{src:"https://gifdb.com/images/high/horizontally-spinning-rat-u6qcpdh41x1gijmi.gif",alt:""})})}export{r as default};
