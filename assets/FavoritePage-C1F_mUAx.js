@@ -1,1 +1,0 @@
-import{j as i}from"./index-B0gdAHWA.js";function o(){return i.jsx("div",{children:i.jsx("img",{src:"https://gifdb.com/images/high/slow-motion-spinning-rat-vwxyc7v2ofbqwkke.gif",alt:""})})}export{o as default};
