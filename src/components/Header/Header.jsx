@@ -6,6 +6,7 @@ import {
   StyledNavLink,
   StyledLogo,
 } from "./Header.styled";
+
 // import icons from "../../images/icons.svg";
 const Header = () => {
   return (
@@ -19,10 +20,10 @@ const Header = () => {
         </StyledLogo>
         <List>
           <ListItem>
-            <StyledNavLink to="catalogue">Catalogue</StyledNavLink>
+            <StyledNavLink to="/catalogue">Catalogue</StyledNavLink>
           </ListItem>
           <ListItem>
-            <StyledNavLink to="favorites">Favorites</StyledNavLink>
+            <StyledNavLink to="/favorites">Favorites</StyledNavLink>
           </ListItem>
         </List>
       </Navigation>
