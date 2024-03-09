@@ -5,12 +5,17 @@ export const catalogueSlice = createSlice({
   name: "catalogue",
   initialState: {
     favorites: [],
-    filteredFavorites: [],
+    filteredCatalogue: [],
     listOfCars: [],
     isLoading: false,
     error: null,
   },
   reducers: {
+    setFilteredCatalogue: (state, action) => {
+      state.isLoading = true;
+      state.filteredCatalogue = action.payload;
+      state.isLoading = false;
+    },
     addFavorite: (state, action) => {
       state.isLoading = true;
       state.favorites.push(action.payload);
@@ -40,4 +45,5 @@ export const catalogueSlice = createSlice({
   },
 });
 
-export const { addFavorite, removeFavorite } = catalogueSlice.actions;
+export const { addFavorite, removeFavorite, setFilteredCatalogue } =
+  catalogueSlice.actions;

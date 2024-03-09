@@ -7,6 +7,7 @@ const List = styled.ul`
   row-gap: 50px;
   column-gap: 29px;
   margin-top: 50px;
+  padding-bottom: 50px;
 `;
 
 const ListItem = styled.li`

@@ -1,29 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-axios.defaults.baseURL = "https://65eae8dd43ce16418932caaa.mockapi.io";
+import { instance } from "../API/axios";
 
 export const fetchCars = createAsyncThunk(
   "catalogue/fetchAll",
-  async (page, { rejectWithValue }) => {
+  async (limit, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`/catalogue?page=${page}&limit=12`);
-      console.log(response);
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  },
-);
-
-export const fetchFilteredCars = createAsyncThunk(
-  "catalogue/fetchFiltered",
-  async (data, { rejectWithValue }) => {
-    try {
-      const response = await axios.get(
-        `/catalogue?page=1&limit=12&filter=${data}`,
-      );
-      console.log(response);
+      const response = await instance.get(`/catalogue?page=1&limit=${limit}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);

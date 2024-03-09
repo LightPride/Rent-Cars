@@ -5,8 +5,8 @@ const LearnMoreWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 460px;
-  /* height: 752px; */
+  width: 541px;
+  height: auto;
   padding: 40px;
 
   border-radius: 24px;
@@ -110,7 +110,6 @@ const CarCondition = styled.div`
   align-items: center;
   gap: 8px;
 
-  height: 32px;
   padding: 0 14px;
   border-radius: 35px;
   background: #f9f9f9;

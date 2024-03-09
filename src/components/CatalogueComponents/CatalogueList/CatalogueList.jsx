@@ -23,6 +23,7 @@ import {
 } from "./CatalogueList.styled";
 import LearnMoreContent from "../LearnMoreContent/LearnMoreContent";
 import { Button } from "../../UI/Button.styled";
+import Loader from "../../UI/Loader";
 import Modal from "../../UI/Modal/Modal";
 import {
   addFavorite,
@@ -31,15 +32,16 @@ import {
 import handleIsFavorite from "../../../Helpers/handleIsFavorite";
 
 const CatalogueList = () => {
-  const [page] = useState(1);
+  const [totalCount] = useState(50);
   const [limit, setLimit] = useState(12);
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState(null);
   const dispatch = useDispatch();
+  const { filteredCatalogue } = useSelector((state) => state.catalogue);
 
   useEffect(() => {
-    dispatch(fetchCars(page));
-  }, [dispatch, page]);
+    dispatch(fetchCars(limit));
+  }, [dispatch, limit]);
 
   const data = useSelector(selectCars);
 
@@ -85,10 +87,9 @@ const CatalogueList = () => {
       <List>
         {error && <div>{error}</div>}
         {isLoading ? (
-          // <Loader />
-          <div>Loading...</div>
+          <Loader />
         ) : (
-          data.map((item) => (
+          (filteredCatalogue.length ? filteredCatalogue : data).map((item) => (
             <ListItem key={nanoid()} id={item.id}>
               <Image src={item.img} />
               <FavoriteBtn
@@ -124,7 +125,7 @@ const CatalogueList = () => {
             </ListItem>
           ))
         )}
-        {data?.totalCount > limit && (
+        {totalCount > limit && (
           <Button
             type="button"
             onClick={() => setLimit((prevLimit) => prevLimit + 12)}
@@ -132,7 +133,6 @@ const CatalogueList = () => {
             Load more
           </Button>
         )}
-
         {showModal && (
           <Modal
             onClose={() => {
@@ -149,10 +149,6 @@ const CatalogueList = () => {
           </Modal>
         )}
       </List>
-      <img
-        src="https://gifdb.com/images/high/stationary-rat-vertical-spin-0jmp9hxvxz4p24ms.gif"
-        alt=""
-      />
     </>
   );
 };
