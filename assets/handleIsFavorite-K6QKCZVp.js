@@ -1,4 +1,4 @@
-import{u as e}from"./index-CdsmviXm.js";const r=t=>t.catalogue.listOfCars,c=t=>t.catalogue.favorites,l=t=>t.catalogue.isLoading,p=t=>t.catalogue.error,i="useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";let d=(t=21)=>{let o="",n=crypto.getRandomValues(new Uint8Array(t));for(;t--;)o+=i[n[t]&63];return o};const g=e.ul`
+import{u as e}from"./index-BGocFOd_.js";const a=t=>t.catalogue.listOfCars,c=t=>t.catalogue.favorites,l=t=>t.catalogue.error,s="useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";let p=(t=21)=>{let o="",n=crypto.getRandomValues(new Uint8Array(t));for(;t--;)o+=s[n[t]&63];return o};const d=e.ul`
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -15,7 +15,7 @@ import{u as e}from"./index-CdsmviXm.js";const r=t=>t.catalogue.listOfCars,c=t=>t
   height: 426px;
   border-radius: 14px;
   align-self: stretch;
-`,f=e.img`
+`,g=e.img`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@ import{u as e}from"./index-CdsmviXm.js";const r=t=>t.catalogue.listOfCars,c=t=>t
   margin-bottom: 14px;
 
   object-fit: cover;
-`,x=e.button`
+`,f=e.button`
   position: absolute;
   top: 14px;
   right: 14px;
@@ -43,7 +43,7 @@ import{u as e}from"./index-CdsmviXm.js";const r=t=>t.catalogue.listOfCars,c=t=>t
   &:hover svg {
     scale: 1.2;
   }
-`,b=e.svg`
+`,x=e.svg`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,21 +54,21 @@ import{u as e}from"./index-CdsmviXm.js";const r=t=>t.catalogue.listOfCars,c=t=>t
   height: 18px;
 
   transition: 300ms;
-`,m=e.h3`
+`,b=e.h3`
   color: #121417;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-`,h=e.div`
+`,m=e.div`
   display: flex;
   justify-content: space-between;
-`,v=e.span`
+`,h=e.span`
   color: #3470ff;
-`,y=e.ul`
+`,v=e.ul`
   margin-bottom: 28px;
-`,F=e.p`
+`,y=e.p`
   color: rgba(18, 20, 23, 0.5);
-`,w=e.button`
+`,F=e.button`
   display: inline-flex;
   padding: 12px 50px;
   justify-content: center;
@@ -83,4 +83,4 @@ import{u as e}from"./index-CdsmviXm.js";const r=t=>t.catalogue.listOfCars,c=t=>t
     cursor: pointer;
     background-color: #3470ff;
   }
-`,j=(t,o)=>t.some(s=>s.id===o.id);export{w as B,x as F,f as I,g as L,h as T,p as a,l as b,c,u as d,b as e,m as f,v as g,j as h,y as i,F as j,d as n,r as s};
+`,w=(t,o)=>t.some(i=>i.id===o.id);export{F as B,f as F,g as I,d as L,m as T,l as a,c as b,u as c,x as d,b as e,h as f,v as g,w as h,y as i,p as n,a as s};
