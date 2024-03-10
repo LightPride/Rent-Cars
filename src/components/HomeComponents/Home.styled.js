@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import back from "../../Images/back1.jpg";
 
 const BASE_TEXT_STYLE = `color: #fff;
-font-family: Manrope, sant-serif;
+font-family: Manrope, sans-serif;
 font-size: 16px;
 font-style: normal;
 font-weight: 500;
@@ -14,7 +15,7 @@ const MainBackground = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-image: url("https://media.architecturaldigest.com/photos/5de6d78c34c35b000880a948/16:9/w_2991,h_1682,c_limit/10_ss300p_ehra-lessien.jpg");
+  background-image: url(${back});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

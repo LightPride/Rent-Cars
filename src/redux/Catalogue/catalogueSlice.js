@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCars } from "./operations";
+import { fetchCars, fetchLoadMore } from "./operations";
 
 export const catalogueSlice = createSlice({
   name: "catalogue",
@@ -13,8 +13,9 @@ export const catalogueSlice = createSlice({
   reducers: {
     setFilteredCatalogue: (state, action) => {
       state.isLoading = true;
-      state.filteredCatalogue = action.payload;
+      state.listOfCars = action.payload;
       state.isLoading = false;
+      state.shouldShowBtn = false;
     },
     addFavorite: (state, action) => {
       state.isLoading = true;
@@ -29,20 +30,33 @@ export const catalogueSlice = createSlice({
       state.isLoading = false;
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(fetchCars.pending, (state) => {
-      state.isLoading = true;
-    });
-    builder.addCase(fetchCars.fulfilled, (state, action) => {
-      state.listOfCars = action.payload;
-      state.isLoading = false;
-      state.error = null;
-    });
-    builder.addCase(fetchCars.rejected, (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    });
-  },
+  extraReducers: (builder) =>
+    builder
+      .addCase(fetchCars.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchCars.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.listOfCars = [...action.payload];
+
+        state.error = null;
+      })
+      .addCase(fetchCars.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(fetchLoadMore.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchLoadMore.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.listOfCars = [...state.listOfCars, ...action.payload];
+        state.error = null;
+      })
+      .addCase(fetchLoadMore.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      }),
 });
 
 export const { addFavorite, removeFavorite, setFilteredCatalogue } =

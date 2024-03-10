@@ -18,18 +18,19 @@ const Home = () => {
     <MainWrapper>
       <MainBackground />
       <MainTitle>
-        Welcome to <b>Rent Cars UA</b>
+        Welcome to <b>Rent Cars</b>
       </MainTitle>
       <MainText>
-        Discover the Freedom of Exploring Ukraine with Our Car Rental Services!
+        Discover the Freedom of Exploring The County with Our Car Rental
+        Services!
       </MainText>
 
       <InfoList>
         <InfoItem>
-          <InfoTitle>Explore Ukraine with Ease</InfoTitle>
+          <InfoTitle>Ride with comfort</InfoTitle>
           <InfoText>
             {
-              "At RCua, we understand that every journey is an adventure waiting to unfold. Whether you're here for business or pleasure, our reliable and diverse fleet of vehicles is at your service. Navigate the scenic roads of Ukraine with comfort and style."
+              "We understand that every journey is an adventure waiting to unfold. Whether you're here for business or pleasure, our reliable and diverse fleet of vehicles is at your service. Navigate the scenic roads with comfort and style."
             }
           </InfoText>
         </InfoItem>
@@ -41,17 +42,9 @@ const Home = () => {
             }
           </InfoText>
         </InfoItem>
-        <InfoItem>
-          <InfoTitle>Seamless Rental Experience</InfoTitle>
-          <InfoText>
-            {
-              "We believe in making your car rental experience as seamless as possible. Our user-friendly online booking platform allows you to reserve your preferred vehicle with just a few clicks. Enjoy transparent pricing, flexible rental periods, and convenient pickup/drop-off locations across Ukraine."
-            }
-          </InfoText>
-        </InfoItem>
 
         <InfoItem>
-          <InfoTitle>Why Choose Us?</InfoTitle>
+          <InfoTitle>Why Us?</InfoTitle>
           <InfoSublist>
             <InfoSubItem>
               <InfoSubItemTitle>Quality Vehicles:</InfoSubItemTitle>
@@ -81,15 +74,6 @@ const Home = () => {
               </InfoSubItemText>
             </InfoSubItem>
           </InfoSublist>
-        </InfoItem>
-        <InfoItem>
-          <InfoTitle>Explore Beyond Boundaries</InfoTitle>
-
-          <InfoText>
-            {
-              "Embark on an unforgettable journey with RCua. Whether you're heading to bustling city centers, serene countryside, or historic landmarks, our cars will take you there with comfort and reliability."
-            }
-          </InfoText>
         </InfoItem>
       </InfoList>
     </MainWrapper>
